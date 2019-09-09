@@ -295,7 +295,7 @@ def main(args):
     game.start()
     while game.status == "playing":
         data = s.recv(1024)
-        data_as_string = data.encode()
+        data_as_string = data.decode('utf-8')
         lines = data_as_string.split("<EOL>\n")
         for line in lines:
             if line:
